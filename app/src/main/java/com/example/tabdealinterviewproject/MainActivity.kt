@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         if (savedInstanceState == null) {
-            val fragment = HomeFragment(balance = 20_000)
+            val fragment = HomeFragment.newInstance(balance = 20_000)
 
             val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
             transaction.replace(R.id.fragment_container, fragment)
