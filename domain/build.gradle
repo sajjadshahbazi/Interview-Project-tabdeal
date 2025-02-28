@@ -1,10 +1,10 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kapt)
     alias(libs.plugins.hilt)
 }
 
-apply plugin: 'kotlin-kapt'
 
 android {
     namespace 'com.example.domain'
