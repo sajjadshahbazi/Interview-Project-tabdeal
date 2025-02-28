@@ -16,7 +16,7 @@ import javax.inject.Inject
 class AssetsViewModel @Inject constructor(private val getAssetsUseCase: GetTokensUseCase) :
     ViewModel() {
 
-    val delayTime : Long = 3000
+    val delayTime : Long = 30000
     val tokens = MutableSharedFlow<List<TokenRepoModel>>(replay = 0)
     val isLoading = MutableSharedFlow<Boolean>(replay = 0)
     val error = MutableSharedFlow<String?>(replay = 0)
