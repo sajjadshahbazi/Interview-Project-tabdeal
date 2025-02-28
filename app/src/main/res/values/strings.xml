@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Tabdeal Interview Project</string>
     <string name="amount_assets">ارزش تقریبی دارایی</string>
+    <string name="tomman">تومان</string>
+    <string name="tether">تتر</string>
 </resources>

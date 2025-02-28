@@ -58,7 +58,7 @@
             android:background="@drawable/active_button_background"
             android:paddingHorizontal="12dp"
             android:paddingVertical="6dp"
-            android:text="تومان"
+            android:text="@string/tomman"
             app:layout_constraintBottom_toBottomOf="@+id/headerHeightSize"
             app:layout_constraintStart_toEndOf="@id/btnTethterCurrency"
             app:layout_constraintTop_toTopOf="@+id/headerHeightSize" />
@@ -70,7 +70,7 @@
             android:background="@drawable/deactive_button_background"
             android:paddingHorizontal="12dp"
             android:paddingVertical="6dp"
-            android:text="تتر"
+            android:text="@string/tether"
             app:layout_constraintBottom_toBottomOf="@+id/headerHeightSize"
             app:layout_constraintStart_toEndOf="@id/guidelineStart"
             app:layout_constraintTop_toTopOf="@+id/headerHeightSize" />
@@ -108,5 +108,4 @@
             tools:text="Error loading assets" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
