@@ -99,6 +99,7 @@ class AssetsFragment : Fragment() {
                 currencyTetherButton.context, R.drawable.deactive_button_background
             )
             assetsAdapter.showTommanCurrencyAmount = false
+            assetsAdapter.notifyDataSetChanged()
         }
 
         currencyTommanButton.setOnClickListener {
@@ -109,6 +110,7 @@ class AssetsFragment : Fragment() {
                 currencyTommanButton.context, R.drawable.active_button_background
             )
             assetsAdapter.showTommanCurrencyAmount = true
+            assetsAdapter.notifyDataSetChanged()
         }
     }
 
