@@ -32,7 +32,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/valueAmount"
+            android:id="@+id/tvValueAmount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/amount_assets"
@@ -47,7 +47,7 @@
             android:layout_marginEnd="4dp"
             android:src="@drawable/ic_eye"
             app:layout_constraintBottom_toBottomOf="@+id/headerHeightSize"
-            app:layout_constraintEnd_toStartOf="@+id/valueAmount"
+            app:layout_constraintEnd_toStartOf="@+id/tvValueAmount"
             app:layout_constraintTop_toTopOf="@+id/headerHeightSize" />
 
         <TextView
@@ -76,7 +76,7 @@
             app:layout_constraintTop_toTopOf="@+id/headerHeightSize" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/assetsRecyclerView"
+            android:id="@+id/rvAssetsRecyclerView"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="8dp"
@@ -84,10 +84,10 @@
             app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
             app:layout_constraintStart_toStartOf="@id/guidelineStart"
             app:layout_constraintTop_toBottomOf="@id/btnTethterCurrency"
-            tools:listitem="@layout/item_asset" /> <!-- Placeholder for item layout -->
+            tools:listitem="@layout/item_asset" />
 
         <ProgressBar
-            android:id="@+id/loadingProgressBar"
+            android:id="@+id/prLoadingProgressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone"
@@ -97,7 +97,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/errorMessageTextView"
+            android:id="@+id/tvErrorMessageTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone"

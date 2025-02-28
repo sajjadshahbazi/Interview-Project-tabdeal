@@ -52,12 +52,12 @@ class AssetsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         swipeRefreshLayout = binding.swipeRefreshLayout
-        valueAmount = binding.valueAmount
+        valueAmount = binding.tvValueAmount
         currencyTommanButton = binding.btnTommanCurrency
         currencyTetherButton = binding.btnTethterCurrency
-        assetsRecyclerView = binding.assetsRecyclerView
-        loadingProgressBar = binding.loadingProgressBar
-        errorMessageTextView = binding.errorMessageTextView
+        assetsRecyclerView = binding.rvAssetsRecyclerView
+        loadingProgressBar = binding.prLoadingProgressBar
+        errorMessageTextView = binding.tvErrorMessageTextView
         showWholeOfAssets = binding.ivShowWholeOfAssets
 
         assetsAdapter = AssetsAdapter()
