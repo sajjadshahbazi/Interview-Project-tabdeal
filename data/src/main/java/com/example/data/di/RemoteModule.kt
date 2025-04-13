@@ -1,8 +1,12 @@
 package com.example.data.di
 
 import com.example.data.remote.ApiService
+import com.example.data.remote.CargoApiService
+import com.example.data.remote.CargoRemoteDataSource
 import com.example.data.remote.TokenRemoteDataSource
+import com.example.data.repository.CargoRepositoryImpl
 import com.example.data.repository.TokenRepositoryImpl
+import com.example.domain.repository.CargoRepository
 import com.example.domain.repository.TokenRepository
 import dagger.Module
 import dagger.Provides
@@ -34,7 +38,8 @@ object RemoteModule {
     @Singleton
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("https://backend.insighttech.ir/")
+            .baseUrl("https://cargo.free.beeceptor.com/")
+//            .baseUrl("https://backend.insighttech.ir/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
             .build()
@@ -56,5 +61,24 @@ object RemoteModule {
     @Singleton
     fun provideAssetRepository(remoteDataSource: TokenRemoteDataSource): TokenRepository {
         return TokenRepositoryImpl(remoteDataSource)
+    }
+
+    // Cargo
+    @Provides
+    @Singleton
+    fun provideCargoApiService(retrofit: Retrofit): CargoApiService {
+        return retrofit.create(CargoApiService::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideCargoRemoteDataSource(apiService: CargoApiService): CargoRemoteDataSource {
+        return CargoRemoteDataSource(apiService)
+    }
+
+    @Provides
+    @Singleton
+    fun provideCargoRepository(remoteDataSource: CargoRemoteDataSource): CargoRepository {
+        return CargoRepositoryImpl(remoteDataSource)
     }
 }
