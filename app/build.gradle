@@ -48,13 +48,19 @@ dependencies {
     implementation libs.androidx.activity
     implementation libs.androidx.constraintlayout
 
-
     implementation project(':domain')
     implementation project(':data')
     implementation project(':common')
 
     implementation libs.lifecycle.viewmodel
     implementation libs.lifecycle.runtime
+
+    // Compose
+    implementation libs.compose.ui
+    implementation libs.compose.material3
+    implementation libs.compose.tooling.preview
+    implementation libs.androidx.activity.compose
+    debugImplementation libs.compose.tooling
 
     implementation libs.retrofit.retrofit
     implementation libs.retrofit.converter.gson
