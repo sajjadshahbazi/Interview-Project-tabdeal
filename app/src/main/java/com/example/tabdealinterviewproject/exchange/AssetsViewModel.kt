@@ -1,4 +1,4 @@
-package com.example.tabdealinterviewproject
+package com.example.tabdealinterviewproject.exchange
 
 import androidx.lifecycle.ViewModel
 import com.example.common.model.Result

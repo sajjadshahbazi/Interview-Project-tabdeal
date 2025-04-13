@@ -1,4 +1,4 @@
-package com.example.tabdealinterviewproject
+package com.example.tabdealinterviewproject.exchange
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.example.tabdealinterviewproject.R
 import com.google.android.material.button.MaterialButton
 import dagger.hilt.android.AndroidEntryPoint
 

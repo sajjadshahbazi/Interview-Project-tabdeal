@@ -1,4 +1,4 @@
-package com.example.tabdealinterviewproject
+package com.example.tabdealinterviewproject.exchange
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.domain.model.TokenRepoModel
+import com.example.tabdealinterviewproject.R
 
 class AssetsAdapter :
     ListAdapter<TokenRepoModel, AssetsAdapter.AssetViewHolder>(AssetsDiffCallback()) {

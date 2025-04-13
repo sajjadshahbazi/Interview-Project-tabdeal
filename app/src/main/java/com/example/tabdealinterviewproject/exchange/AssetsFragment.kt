@@ -1,4 +1,4 @@
-package com.example.tabdealinterviewproject
+package com.example.tabdealinterviewproject.exchange
 
 import android.graphics.drawable.Drawable
 import android.os.Bundle
@@ -16,6 +16,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import com.example.tabdealinterviewproject.R
 import com.example.tabdealinterviewproject.databinding.FragmentAssetsBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.cancelChildren
