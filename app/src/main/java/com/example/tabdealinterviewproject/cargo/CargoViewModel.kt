@@ -14,7 +14,7 @@ import javax.inject.Inject
 @HiltViewModel
 class CargoViewModel @Inject constructor(private val getCargosUseCase: GetCargosUseCase) : ViewModel() {
     private val _cargoItems : MutableList<CargoRepoModel> = mutableListOf()
-    private var _selectedItem : CargoRepoModel? = null
+    var _selectedItem : CargoRepoModel? = null
 
     val cargoItems = MutableSharedFlow<List<CargoRepoModel>>()
     val selectedItem = MutableSharedFlow<CargoRepoModel?>()
@@ -51,10 +51,10 @@ class CargoViewModel @Inject constructor(private val getCargosUseCase: GetCargos
             _cargoItems.forEach { it.isSelected = ((_selectedItem?.id ?: -1) == (it.id)) }
 
             viewModelScope.launch {
+                cargoItems.emit(_cargoItems)
                 _selectedItem?.let {
                     selectedItem.emit(it)
                 }
-                cargoItems.emit(_cargoItems)
             }
         }
     }

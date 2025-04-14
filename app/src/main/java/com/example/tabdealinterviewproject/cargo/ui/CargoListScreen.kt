@@ -59,11 +59,15 @@ fun CargoListScreen(
                 contentPadding = PaddingValues(16.dp),
                 verticalArrangement = Arrangement.spacedBy(16.dp)
             ) {
-                items(cargoItems) { cargoItem ->
+                items(
+                    items = cargoItems,
+                    key = { it.id }
+                ) { cargoItem ->
                     CargoCard(
                         cargoItem = cargoItem,
                         isSelected = selectedLoad.value?.id == cargoItem.id,
                         viewModel = viewModel,
+                        isLocked = viewModel.lockedItems,
                         onClick = {
                             if (!viewModel.lockedItems) {
                                 showDialog = true
@@ -89,11 +93,11 @@ fun CargoListScreen(
 fun CargoCard(
     cargoItem: CargoRepoModel,
     isSelected: Boolean,
+    isLocked: Boolean,
     viewModel : CargoViewModel,
     onClick: () -> Unit
 ) {
 
-    val selectedItem by remember { mutableStateOf(viewModel.selectedItem) }
 
     Card(
         modifier = Modifier
@@ -107,7 +111,7 @@ fun CargoCard(
         )
     ) {
 
-        if (selectedItem.collectAsState(null).value?.id == cargoItem.id) {
+        if (viewModel._selectedItem?.id == cargoItem.id) {
             Box(modifier = Modifier.fillMaxWidth().wrapContentHeight().padding(16.dp)) {
                 Row(
                     modifier = Modifier
@@ -163,7 +167,7 @@ fun CargoCard(
                     modifier = Modifier.weight(1f).padding(start = 4.dp, top = 0.dp, end = 4.dp, bottom = 0.dp)
                 )
 
-                if (viewModel.lockedItems) {
+                if (isLocked) {
                     Icon(
                         imageVector = Icons.Default.Lock,
                         contentDescription = "Selected",
