@@ -28,9 +28,13 @@ class CargoRepositoryImpl @Inject constructor(
 fun CargoServerModel.toRepoModel(): CargoRepoModel {
     return CargoRepoModel(
         id = this.id ?: -1,
-        name = this.name ?: "",
-        description = this.description ?: "",
-        price = this.price ?: -1,
-        quantity = this.quantity ?: -1
+        origin = this.origin ?: "",
+        destination = this.destination ?: "",
+        price = this.price ?: "",
+        packaging = this.packaging ?: "",
+        weight = this.weight ?: "",
+        type = this.type ?: "",
+        loadingDate = this.loadingDate ?: "",
+        isSelected = false
     )
 }
